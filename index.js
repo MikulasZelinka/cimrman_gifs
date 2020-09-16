@@ -37,7 +37,8 @@ function copyToClipboard(text) {
 
 function showTooltip(copied) {
     message = copied ? 'Copied to clipboard succesfully.' : 'Something went wrong during copying to clipboard, check console.';
-    alert(message);
+    // alert(message);
+    console.log(message);
 }
 
 const gifsJson = shuffleArray(JSON.parse(gifsData));
