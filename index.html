@@ -9,9 +9,11 @@
     <body>
 
         <div id="app">
+            <input v-model="query">
             <ol>
-                <li v-for="gif in gifs">
-                    {{ gif.id }}
+                <li v-for="gif in gifs" v-if="gif.keywords.some(x => x.includes(query))">
+                    {{ gif.keywords }}
+                    <img v-bind:src="gif.images.original.url"/>
                 </li>
             </ol>
         </div>
