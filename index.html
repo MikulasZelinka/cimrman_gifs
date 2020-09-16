@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- production version, optimized for size and speed -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    </head>
+
+    <body>
+
+        <div id="app">
+            <ol>
+                <li v-for="gif in gifs">
+                    {{ gif.id }}
+                </li>
+            </ol>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
