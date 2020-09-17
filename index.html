@@ -30,7 +30,7 @@
 
             <div id="gifs" class="container-fluid d-flex flex-wrap">
 
-                <div v-for="gif in gifs" v-if="gif.keywords.some(x => x.includes(query))">
+                <div v-for="gif in gifs" v-if="gif.keywords.some(x => x.includes(query.toLowerCase()))">
                     <!-- <img v-bind:src="gifs[0].images.preview_gif.url" v-on:click="copy(gif)" class="card-img-top"> -->
                     <img v-bind:src="gif.images.preview_webp.url" v-on:click="copy(gif)" class="card-img-top" v-bind:title="gif.keywords" v-bind:alt="gif.keywords">
                     <!-- <video autoplay loop muted playsinline v-on:click="copy(gif)" class="card-img-top">
