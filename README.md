@@ -14,4 +14,4 @@ https://cimrman.zelinka.dev
 - [ ] cleanup json (remove redundant image urls)
 - [ ] option to select gif quality to be shared
 - [ ] smart/dynamic image load (only when displayed)
-- [ ] search for multiple keywords (separate query by whitespaces)
+- [x] search for multiple keywords (separate query by whitespaces)
