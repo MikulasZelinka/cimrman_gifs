@@ -11,7 +11,9 @@ https://cimrman.zelinka.dev
 - [x] display webm instead of gifs (better quality/size ratio)
 - [ ] display mp4 instead of webm (better quality/size ratio)
 - [ ] vanishing tooltip alert after clipboard copy
-- [ ] cleanup json (remove redundant image urls)
+- [x] cleanup json (remove redundant image urls)
 - [ ] option to select gif quality to be shared
 - [ ] smart/dynamic image load (only when displayed)
 - [x] search for multiple keywords (separate query by whitespaces)
+- [x] ignore list for gifs that have nothing to do with mr. Jarunka
+- [ ] support regex search (without that we can't search for "jak" only as it is contained in "smoljak")

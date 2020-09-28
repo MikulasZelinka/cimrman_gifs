@@ -9,6 +9,7 @@ API_URL = 'api.giphy.com/v1/gifs/search'
 API_KEY = open('API_KEY').read().strip()
 LIMIT = 50
 QUERY = 'cimrman'
+IGNORE_LIST = set(open('ignore_list.csv').read().strip().split())
 
 
 def get_gif_keywords(giphy_url):
@@ -35,11 +36,18 @@ def main():
         response = r.json()
 
         for gif in tqdm(response['data']):
+            if gif['id'] in IGNORE_LIST:
+                print(f'Skipping gif {gif["id"]}')
+                continue
+
             gifs.append({
                 'id': gif['id'],
                 'url': gif['url'],
                 'keywords': get_gif_keywords(gif['url']),
-                'images': gif['images']
+                # contains a lot of redundant links:
+                # 'images': gif['images'],
+                # instead, we only select the one we need
+                'preview_url': gif['images']['preview_webp']['url'],
             })
 
         pagination = response['pagination']
