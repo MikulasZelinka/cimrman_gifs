@@ -6,9 +6,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <!-- development version, includes helpful console warnings -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
         <!-- production version, optimized for size and speed -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <title>cimrman gify</title>
     </head>
 
@@ -19,8 +19,8 @@
             <nav class="navbar navbar-dark bg-dark">
             <!-- <div class="row"> -->
                 <div class="col text-left">
-                    <input v-model="query" v-focus placeholder="začněte psát (například „konec smoljak“)" class="w-100" aria-describedby="queryHelp">
-                    <small id="queryHelp" class="form-text text-muted">kliknutím na obrázek pak zkopírujete odkaz na gif</small>
+                    <input v-model="query" v-focus placeholder="začněte psát (např. „Svěrák ^jak“)" class="w-100" aria-describedby="queryHelp">
+                    <small id="queryHelp" class="form-text text-muted">ve formuláři jsou podporovány výrazy (regexy) oddělené mezerou<br>kliknutím na obrázek pak zkopírujete odkaz na gif</small>
 
                 </div>
                 <div class="col text-middle"></div>
@@ -30,7 +30,7 @@
 
             <div id="gifs" class="container-fluid d-flex flex-wrap">
                 <!-- accent removal src: https://stackoverflow.com/a/37511463/8971202 -->
-                <div v-for="gif in gifs" v-if="query.split(/[^\w]+/).every(q => gif.keywords.some(k => k.includes(q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))))">
+                <div v-for="gif in gifs" v-if="matches_query(gif.keywords)">
                     <!-- <img v-bind:src="gifs[0].images.preview_gif.url" v-on:click="copy(gif)" class="card-img-top"> -->
                     <img v-bind:src="gif.preview_url" v-on:click="copy(gif)" class="card-img-top" v-bind:title="gif.keywords" v-bind:alt="gif.keywords">
                     <!-- <video autoplay loop muted playsinline v-on:click="copy(gif)" class="card-img-top">

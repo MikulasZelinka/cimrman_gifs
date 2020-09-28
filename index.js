@@ -53,6 +53,13 @@ var app = new Vue({
     copy: function (gif) {
         copied = copyToClipboard(gif.url);
         showTooltip(copied);
+    },
+    matches_query: function (keywords) {
+        return this.query.split(/[ ]+/).every(
+            q => keywords.some(
+                k => RegExp(
+                    q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                ).test(k)));
     }
   },
   directives: {

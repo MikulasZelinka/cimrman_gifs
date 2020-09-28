@@ -16,4 +16,4 @@ https://cimrman.zelinka.dev
 - [ ] smart/dynamic image load (only when displayed)
 - [x] search for multiple keywords (separate query by whitespaces)
 - [x] ignore list for gifs that have nothing to do with mr. Jarunka
-- [ ] support regex search (without that we can't search for "jak" only as it is contained in "smoljak")
+- [x] support regex search (without that we can't search for "jak" only as it is contained in "smoljak")
