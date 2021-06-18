@@ -32,7 +32,7 @@
                 <!-- accent removal src: https://stackoverflow.com/a/37511463/8971202 -->
                 <div v-for="gif in gifs" v-if="matches_query(gif.keywords)">
                     <!-- <img v-bind:src="gifs[0].images.preview_gif.url" v-on:click="copy(gif)" class="card-img-top"> -->
-                    <img v-bind:src="gif.preview_url" v-on:click="copy(gif)" class="card-img-top" v-bind:title="gif.keywords" v-bind:alt="gif.keywords">
+                    <img v-bind:src="gif.preview_url" v-on:click="copy(gif)" class="card-img-top" v-bind:title="gif.keywords" v-bind:alt="gif.keywords" loading="lazy">
                     <!-- <video autoplay loop muted playsinline v-on:click="copy(gif)" class="card-img-top">
                         <source :src="gif.images.preview.url" type="video/mp4">
                     </video> -->
