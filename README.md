@@ -13,7 +13,7 @@ https://cimrman.zelinka.dev
 - [ ] vanishing tooltip alert after clipboard copy
 - [x] cleanup json (remove redundant image urls)
 - [ ] option to select gif quality to be shared
-- [ ] smart/dynamic image load (only when displayed)
+- [x] smart/dynamic image load (only when displayed) (it _might_ work)
 - [x] search for multiple keywords (separate query by whitespaces)
 - [x] ignore list for gifs that have nothing to do with mr. Jarunka
 - [x] support regex search (without that we can't search for "jak" only as it is contained in "smoljak")
