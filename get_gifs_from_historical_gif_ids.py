@@ -2,6 +2,7 @@ import json
 
 QUERY = 'cimrman'
 RESOURCES_PATH = 'resources'
+WEBP_URL = 'https://i.giphy.com/media/{id}/200w.webp'
 MP4_URL = 'https://i.giphy.com/media/{id}/200w.mp4'
 
 
@@ -27,7 +28,8 @@ def main(bootstrap=False):
     gifs = [
         {
             'url': gif['url'],
-            'mp4': MP4_URL.format(id=id),
+            # 'mp4': MP4_URL.format(id=id),
+            'webp': WEBP_URL.format(id=id),
             'keywords': gif['keywords'],
         }
         for id, gif in gifs.items()
@@ -47,4 +49,4 @@ def main(bootstrap=False):
 
 
 if __name__ == '__main__':
-    main(bootstrap=False)
+    main(bootstrap=True)

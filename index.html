@@ -36,9 +36,11 @@
 
             <div id="gifs" class="container-fluid d-flex flex-wrap">
                 <div v-for="gif in gifs" v-if="matches_query(gif.keywords)" v-on:click="copy(gif)">
-                    <video autoplay loop muted playsinline>
-                        <source v-bind:src="gif.mp4" type="video/mp4">
-                    </video>
+                    <img v-bind:src="gif.webp" v-bind:title="gif.keywords" v-bind:alt="gif.keywords">
+<!--                    <video autoplay loop muted playsinline>-->
+<!--                        <source v-bind:src="gif.webp" type="video/webm">-->
+<!--&lt;!&ndash;                        <source v-bind:src="gif.mp4" type="video/mp4">&ndash;&gt;-->
+<!--                    </video>-->
 <!--                    <span>{{ gif.mp4 }}</span>-->
                 </div>
             </div>
