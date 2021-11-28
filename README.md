@@ -11,7 +11,7 @@ Pokud k přidání dojde (dejte mi vědět), objeví se časem i [zde](https://c
 
 Původně:
 ```shell
-python get get_gifs_with_keywords.py
+python get_gifs_with_keywords.py
 ```
 
 
